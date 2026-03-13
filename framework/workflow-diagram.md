@@ -1,9 +1,6 @@
-# Linux Privilege Escalation Framework – Decision Workflow
-
-```mermaid
 flowchart TD
 
-A[Start Assessment] --> B[Environment Validation]
+A[Start Privilege Escalation Workflow] --> B[Environment Validation]
 
 B -->|Linux Confirmed| C[Phase 1: System Context]
 B -->|Not Linux| Z[Stop - Out of Scope]
@@ -19,7 +16,7 @@ G --> H[Phase 6: Capabilities]
 H --> I[Phase 7: Kernel Mapping]
 
 I -->|Exploit Found| R
-I -->|No Exploit| X[Generate Structured Failure Report]
+I -->|No Exploit| X[Generate Escalation Summary]
 
 R --> S[Generate Escalation Summary]
-S --> END[Stop]
+S --> END[Stop Workflow]
